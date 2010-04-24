@@ -2,21 +2,21 @@ require 'yaml'
 require 'sinatra/base'
 require 'sinatra-twitter-oauth'
 require 'appengine-apis/urlfetch'
-
-class Net::HTTP
-  def use_ssl=(val)
-    @use_ssl = val
-  end
-end 
-
+require "patch_for_appengine_jruby_twitter"
 
 class HelloTwit < Sinatra::Base
   register Sinatra::TwitterOAuth
-  
+
   set :twitter_oauth_config, YAML.load_file('twitter_conf.yml')
 
   get '/' do
     login_required
-    "Hello #{@user.name}"
+    "Hello #{user.name}, <a href='/twit'>twit!</a>"
+  end
+
+  get "/twit" do
+    login_required
+    user.client.update("Hey! #{Time.now}")
+    redirect "http://twitter.com/#{user.screen_name}"
   end
 end

@@ -1,0 +1,5 @@
+:key: _your key_
+:secret: _your secret_
+:callback: http://_your_app_.appspot.com/auth
+:login_template:
+  :text: <a href="/connect">Login using Twitter</a>
