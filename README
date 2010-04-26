@@ -4,6 +4,8 @@ Hello world for twitter oauth on appengine.
 
 Authenticate with it, and it says hello __name__
 
+And tweet "Hey!"
+
 =Notes
 
 It needs gems from rc-gems.appspot.com, in particular, jruby-openssl.
@@ -19,8 +21,4 @@ For the jruby-openssl gem, that would look like
   
 You also need to supply a config file including your twitter oauth information.
 
-:key: _your key_
-:secret: _your secret_
-:callback: http://_your_app_.appspot.com/auth
-:login_template: 
-  :text: <a href="/connect">Login using Twitter</a>
+Copy twitter_conf.yml.template and edint it.
