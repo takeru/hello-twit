@@ -17,5 +17,14 @@ gem "oauth",                 "0.3.6"
 gem "ruby-hmac",             "0.4.0"
 gem "mime-types",            "1.16"
 
-source "http://rc-gems.appspot.com"
-gem "jruby-openssl",         "0.6.1"
+#source "http://rc-gems.appspot.com"
+#gem "jruby-openssl",         "0.6.1"
+gem "jruby-openssl",         "0.5.2"
+
+=begin
+sudo gem uninstall jruby-openssl
+wget http://rc-gems.appspot.com/gems/jruby-openssl-0.5.2.gem
+sudo gem install jruby-openssl-0.5.2.gem
+----
+NG: http://ci.jruby.org/job/jruby-openssl/19/artifact/pkg/jruby-openssl-0.6.1.gem
+=end
